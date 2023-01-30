@@ -6,8 +6,14 @@ h1{
     padding-top: 150px;
     font-size: 500%;
 }
-h2{
-    text-align: center;
-    padding-top: 100px;
+
+button{
+    position:absolute;
+    box-align: center;
     font-size: 200%;
+}
+.start-btn{
+    text-align: center;
+    position:relative;
+    right:100px;
 }
