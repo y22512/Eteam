@@ -15,5 +15,9 @@ button{
 .start-btn{
     text-align: center;
     position:relative;
-    right:100px;
+    right:70px;
+}
+img{
+    width: 200px;
+    height: auto;
 }
