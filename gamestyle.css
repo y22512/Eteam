@@ -1,0 +1,20 @@
+body{
+    background-color: rgb(19, 163, 0);
+}
+
+.start-btn{
+    text-align: center;
+    position:relative;
+    right:70px;
+}
+img{
+    width: 200px;
+    height: auto;
+}
+.player2{
+    text-align: center;
+}
+
+.player1{
+    text-align: center;
+}
