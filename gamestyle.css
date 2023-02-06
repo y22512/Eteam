@@ -12,8 +12,9 @@ img{
     height: auto;
 }
 .player2{
-    margin-left: 40%;
+    text-align: center;
 }
-.deck{
-    margin-left:20%;
+
+.player1{
+    text-align: center;
 }

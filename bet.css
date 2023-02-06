@@ -1,0 +1,19 @@
+body{
+    background-color: rgb(19, 163, 0);
+}
+
+.text{
+    display: flex;
+    justify-content: space-between;
+}
+
+.bettext{
+    margin-top: 20%;
+    padding-bottom: -30%;
+}
+.moneytext{
+    margin-top: 23%;
+}
+.money{
+    margin-top:
+}
