@@ -23,12 +23,13 @@ var dealer_first_flag = 0;//最初かの確認
 var game_count = 1;
 var null_points=[0,0];//空
 var card_type=["club","diamond","heart","spade"];
+var neutral_card_info=document.getElementsByClassName("player2");//初期状態のカードの並び
 
 
 var card_correct = new Array(4);//画像の確認配列
 //2次元目の画像配列
 for (let i = 0; i < 4; i++) {
-  card_img[i] = new Array(13).fill(1);
+  card_correct[i] = new Array(13).fill(1);
 };
 
 
@@ -45,7 +46,8 @@ function create_random_4() {
 function add_distribute_card(type_number, sheets_number, person) {
   //プレイヤー側の追加
   if (person == 1) {//ハートとか　　数字
-    my_card.push([type_number, sheets_number]);
+    //my_card.push([type_number, sheets_number]);
+    document.querySelector(".dealercard"+card_count).src="/img/card_"+card_type[type_number]+"_"+("00"+sheets_number).slice(-2);
     //ジャック、クイーン、キング、ではないかの確認
     if (sheets_number <= 10) {
       my_points[0] += sheets_number + 1;
@@ -63,16 +65,12 @@ function add_distribute_card(type_number, sheets_number, person) {
 
   //ディーラー側の追加
   if (person == 0) {
-    dealer_card.push([type_number, sheets_number]);
+    //dealer_card.push([type_number, sheets_number]);
+    document.querySelector(".playercard"+card_count).src="/img/card_"+card_type[type_number]+"_"+("00"+sheets_number).slice(-2);
   }
   //最初か
-  if (dealer_first_flag == 0) {
-    dealer_first_flag = 1;
-  }
-  else {
     output_dealer_points[0] += save_dealer_points[0];
     output_dealer_points[1] += save_dealer_points[1];
-  }
   //ジャック、クイーン、キング、ではないかの確認
   if (sheets_number <= 10 && sheets_number != 0) {
     save_dealer_points[0] += sheets_number + 1;
@@ -207,21 +205,24 @@ function reset(){
   for (let i = 0; i < 4; i++) {
     card_img[i] = new Array(13).fill(1);
   };
+  document.getElementsByClassName("player2")=neutral_card_info;
+  document.getElementsByClassName("player1")=neutral_card_info;
 }
 
 
 //所持金額を表示
-document.querySelector(".money").innerText=my_beds;
+document.querySelector(".money").innerHTML=my_beds;
 
 //1.ベッド数を入力
-document.querySelector().addEventListener("click", function () {
+document.querySelector(".bet-btn").addEventListener("click", function () {
   bed_Score = document.querySelector();
   my_beds-=bed_Score;
+  //ディーラー側
+  distribute_card(0)
   //カードを2枚ドロー
   for (let i = 0; i < 2; i++) {
     //プレイヤー側
     distribute_card(1)
-
   };
   //ディーラー側
   distribute_card(0)
@@ -231,7 +232,7 @@ document.querySelector().addEventListener("click", function () {
 
 
 //ヒットボタン
-document.querySelector().addEventListener("click", function () {
+document.querySelector(".hbtn").addEventListener("click", function () {
   //ベッドした後か確認
   if (start_flag == 1) {
     //プレイヤー側
@@ -246,7 +247,7 @@ document.querySelector().addEventListener("click", function () {
 
 //スタンドボタン
 //1ゲーム終了
-document.querySelector().addEventListener("click", function stand() {
+document.querySelector(".sbtn").addEventListener("click", function stand() {
   //ベッドした後か確認
   if (start_flag == 1) {
     while (correct_AI() == 1) {
