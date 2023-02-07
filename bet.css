@@ -11,3 +11,13 @@ body{
     width:400px;
     height:400px;
 }
+.youso{
+    margin-left:200px;
+}
+input{
+    transform:scale(1.5,1.5);
+}
+.bet-btn{
+    margin-left:70px;
+    font-size:20px;
+}
