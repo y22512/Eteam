@@ -39,3 +39,8 @@ div.hit-btn{
 div.stand-btn{
     margin-left:50px; 
 }
+
+.round{
+    right: 0px;
+    bottom: 0px;
+}
