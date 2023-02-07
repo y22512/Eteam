@@ -17,7 +17,6 @@ h1{
 a.btn_06 {
 	display: block;
 	text-align: center;
-	vertical-align: middle;
 	text-decoration: none;
 	width: 120px;
 	margin: auto;
@@ -26,12 +25,12 @@ a.btn_06 {
 	border-radius: 100vh;
 	border-bottom: 7px solid #68c9e9;
 	background: #95e4ff;
-	color: #777777;
+	color: #000000;
     font-size: 20px;
 }
 a.btn_06:hover {
 	margin-top: 6px;
 	border-bottom: 1px solid #3888a3;
-	color: #000000;
+	color: #777777;
 }
 
