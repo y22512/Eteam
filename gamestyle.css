@@ -23,16 +23,19 @@ img{
 .count{
     text-align: center;
 }
-/* div.hit-btn{
-    height:100px;
-    margin-left:80px;
-    
-    transform:(2, 3);
-        box-align: center;
-        font-size: 1000%;
-} */
 
 .round{
     right: 0;
     bottom: 0;
+}
+button{
+    font-size:20px;
+    width:150px;
+}
+div.hit-btn{
+    margin-bottom:50px;
+    margin-left:50px;
+}
+div.stand-btn{
+    margin-left:50px; 
 }
