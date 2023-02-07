@@ -211,11 +211,19 @@ function reset(){
 
 
 //所持金額を表示
-document.querySelector(".money").innerHTML=my_beds;
+window.onload = () => {
+  let path = location.pathname
+  if(path == "./bet.html"){
+    document.querySelector(".money").innerHTML=my_beds;
+  }
+}
+
 
 //1.ベッド数を入力
 document.querySelector(".bet-btn").addEventListener("click", function () {
-  bed_Score = document.querySelector();
+  bed_Score = document.querySelector(".betform").innerHTML;
+  console.log(bed_Score);
+  console.log("jklsdfsdf");
   my_beds-=bed_Score;
   //ディーラー側
   distribute_card(0)
