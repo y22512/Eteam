@@ -18,6 +18,7 @@ var bed_Score = 0;//ベッド数
 var my_card;//自分の持っているカード
 var dealer_card;//相手が持っているカード
 var start_flag = 0;//進んでいいかの確認フラグ
+var card_count=0;//カードの枚数
 var dealer_first_flag = 0;//最初かの確認
 var game_count = 1;
 var null_points=[0,0];//空
@@ -207,6 +208,10 @@ function reset(){
     card_img[i] = new Array(13).fill(1);
   };
 }
+
+
+//所持金額を表示
+document.querySelector(".money").innerText=my_beds;
 
 //1.ベッド数を入力
 document.querySelector().addEventListener("click", function () {
