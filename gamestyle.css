@@ -1,6 +1,8 @@
 body{
-    background-color: rgb(19, 163, 0);
+    background-image:url("/img/KR49da4f8houWQz1675752955_1675753511.jpg");
     font-family: 'Zen Antique', serif;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .start-btn{
