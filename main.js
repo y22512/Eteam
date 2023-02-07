@@ -18,9 +18,11 @@ var bed_Score = 0;//ベッド数
 var my_card;//自分の持っているカード
 var dealer_card;//相手が持っているカード
 var start_flag = 0;//進んでいいかの確認フラグ
+var card_count=0;//カードの枚数
 var dealer_first_flag = 0;//最初かの確認
 var game_count = 1;
 var null_points=[0,0];//空
+var card_type=["club","diamond","heart","spade"];
 
 
 var card_correct = new Array(4);//画像の確認配列
@@ -162,7 +164,7 @@ function finish_game() {
   if (game_count != 5) {
     //勝敗を決める
     //ポイントを加算
-    //ディーラー勝利
+    //負け
     if(Win_or_lose()==0){
       
     }
@@ -180,7 +182,7 @@ function finish_game() {
     }
     //カードを隠す
     //ドローカードをリセット
-
+    reset()
   }
   //ゲーム終了
   else {
@@ -194,17 +196,22 @@ function reset(){
   output_dealer_points = [0, 0]; //ディーラーの表示用のポイント
   save_dealer_points = [0, 0];//ディーラーの隠している分のポイント
   bed_Score = 0;//ベッド数
-  delete my_card;//自分の持っているカード
-  delete dealer_card;//相手が持っているカード
+  delete my_card;//自分の持っているカード-削除
+  delete dealer_card;//相手が持っているカード-削除
   var my_card=0;//自分の持っているカード
   var dealer_card=0;//相手が持っているカード
   start_flag = 0;//進んでいいかの確認フラグ
   dealer_first_flag = 0;//最初かの確認
-  //2次元目の画像配列
+  delete card_correct;//削除
+  var card_correct = new Array(4);//画像の確認配列
   for (let i = 0; i < 4; i++) {
     card_img[i] = new Array(13).fill(1);
   };
 }
+
+
+//所持金額を表示
+document.querySelector(".money").innerText=my_beds;
 
 //1.ベッド数を入力
 document.querySelector().addEventListener("click", function () {
@@ -215,10 +222,9 @@ document.querySelector().addEventListener("click", function () {
     //プレイヤー側
     distribute_card(1)
 
-    //ディーラー側
-    distribute_card(0)
-
   };
+  //ディーラー側
+  distribute_card(0)
   //ヒット、スタンドボタンを動くようにする
   start_flag = 1;
 });
