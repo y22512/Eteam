@@ -8,12 +8,15 @@ body{
 }
 
 .bettext{
-    margin-top: 20%;
-    padding-bottom: -30%;
+
 }
 .moneytext{
-    margin-top: 23%;
+
 }
 .money{
-    margin-top:
+
+}
+.chip{
+    width:400px;
+    height:400px;
 }

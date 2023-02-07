@@ -1,5 +1,6 @@
 body{
     background-color: rgb(19, 163, 0);
+    font-family: 'Zen Antique', serif;
 }
 
 .start-btn{
@@ -17,4 +18,21 @@ img{
 
 .player1{
     text-align: center;
+}
+
+.count{
+    text-align: center;
+}
+/* div.hit-btn{
+    height:100px;
+    margin-left:80px;
+    
+    transform:(2, 3);
+        box-align: center;
+        font-size: 1000%;
+} */
+
+.round{
+    right: 0;
+    bottom: 0;
 }
