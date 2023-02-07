@@ -1,14 +1,37 @@
+body{
+    background-image: url(/img/back.jpg);
+    font-family: 'Zen Antique', serif;
+}
+
 h1{
     text-align:center;
     padding-top: 150px;
     font-size: 500%;
 }
 
-button{
+/* button{
     position:absolute;
     box-align: center;
     font-size: 200%;
+} */
+a.btn_06 {
+	display: block;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	width: 120px;
+	margin: auto;
+	padding: 1rem 4rem;
+	font-weight: bold;
+	border-radius: 100vh;
+	border-bottom: 7px solid #68c9e9;
+	background: #95e4ff;
+	color: #777777;
+    font-size: 20px;
 }
-body{
-    background-color: rgb(19, 163, 0);
+a.btn_06:hover {
+	margin-top: 6px;
+	border-bottom: 1px solid #3888a3;
+	color: #000000;
 }
+
