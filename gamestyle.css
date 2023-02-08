@@ -10,10 +10,7 @@ body{
     position:relative;
     right:70px;
 }
-img{
-    width: 200px;
-    height: auto;
-}
+
 .player2{
     text-align: center;
 }
@@ -41,3 +38,48 @@ div.hit-btn{
 div.stand-btn{
     margin-left:50px; 
 }
+div.judge{
+margin-left:750px;
+}
+
+.dealercard1{
+    width: 200px;
+    height: auto;
+}
+.dealercard2{
+    width: 200px;
+    height: auto;
+}
+.dealercard3{
+    width: 200px;
+    height: auto;
+}
+.dealercard4{
+    width: 200px;
+    height: auto;
+}
+.dealercard5{
+    width: 200px;
+    height: auto;
+}
+.playercard1{
+    width: 200px;
+    height: auto;
+}
+.playercard2{
+    width: 200px;
+    height: auto;
+}
+.playercard3{
+    width: 200px;
+    height: auto;
+}
+.playercard4{
+    width: 200px;
+    height: auto;
+}
+.playercard5{
+    width: 200px;
+    height: auto;
+}
+
