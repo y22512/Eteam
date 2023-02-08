@@ -9,6 +9,18 @@
     5,勝ったら掛け金の1.5倍を返す
       ブラックジャック(21)なら２倍にして返す
 */
+
+//クッキー構成
+/*
+[key]
+game_count 何ゲーム目か
+bed_score  ベッド数
+my_bed     自分の持ち金
+
+*/
+
+//2/8仕様変更　ディーラーのbedいらない
+
 var my_beds=100;//自分の持ち金
 var dealer_beds=100;//ディーラーの持ち金
 var my_points = [0, 0];      //自分のポイント[点数,1の個数]
@@ -20,10 +32,10 @@ var dealer_card;//相手が持っているカード
 var start_flag = 0;//進んでいいかの確認フラグ
 var card_count=0;//カードの枚数
 var dealer_first_flag = 0;//最初かの確認
-var game_count = 1;
+var turn_count = 1;//ターン数
 var null_points=[0,0];//空
 var card_type=["club","diamond","heart","spade"];
-var neutral_card_info=document.getElementsByClassName("player2");//初期状態のカードの並び
+//var neutral_card_info=document.getElementsByClassName("player2");//初期状態のカードの並び
 
 
 var card_correct = new Array(4);//画像の確認配列
@@ -41,7 +53,7 @@ function create_random_4() {
   return Math.floor(Math.random() * 100 % 4);
 };
 
-
+//追加いらないjsでhtml書き換えられればいい
 //配られたカードを持っているカードに追加
 function add_distribute_card(type_number, sheets_number, person) {
   //プレイヤー側の追加
@@ -87,7 +99,7 @@ function add_distribute_card(type_number, sheets_number, person) {
 };
 
 
-
+//追加いらないjsでhtml書き換えられればいい
 //カードを配る
 function distribute_card(person) {
   let draw_type_number = create_random_4();
@@ -189,34 +201,56 @@ function finish_game() {
 };
 
 //次のターン用のリセット
-function reset(){
-  my_points = [0, 0];      //自分のポイント[点数,1の個数]
-  output_dealer_points = [0, 0]; //ディーラーの表示用のポイント
-  save_dealer_points = [0, 0];//ディーラーの隠している分のポイント
-  bed_Score = 0;//ベッド数
-  delete my_card;//自分の持っているカード-削除
-  delete dealer_card;//相手が持っているカード-削除
-  var my_card=0;//自分の持っているカード
-  var dealer_card=0;//相手が持っているカード
-  start_flag = 0;//進んでいいかの確認フラグ
-  dealer_first_flag = 0;//最初かの確認
-  delete card_correct;//削除
-  var card_correct = new Array(4);//画像の確認配列
-  for (let i = 0; i < 4; i++) {
-    card_img[i] = new Array(13).fill(1);
-  };
-  document.getElementsByClassName("player2")=neutral_card_info;
-  document.getElementsByClassName("player1")=neutral_card_info;
-}
+// function reset(){
+//   my_points = [0, 0];      //自分のポイント[点数,1の個数]
+//   output_dealer_points = [0, 0]; //ディーラーの表示用のポイント
+//   save_dealer_points = [0, 0];//ディーラーの隠している分のポイント
+//   bed_Score = 0;//ベッド数
+//   delete my_card;//自分の持っているカード-削除
+//   delete dealer_card;//相手が持っているカード-削除
+//   var my_card=0;//自分の持っているカード
+//   var dealer_card=0;//相手が持っているカード
+//   start_flag = 0;//進んでいいかの確認フラグ
+//   dealer_first_flag = 0;//最初かの確認
+//   delete card_correct;//削除
+//   var card_correct = new Array(4);//画像の確認配列
+//   for (let i = 0; i < 4; i++) {
+//     card_img[i] = new Array(13).fill(1);
+//   };
+//   document.getElementsByClassName("player2")=neutral_card_info;
+//   document.getElementsByClassName("player1")=neutral_card_info;
+// }
+
+
+//クッキー書き込み
+function write_cookie(key,value){
+  document.cookie=(key+"="+value);
+};
+
+
+//クッキー読み込み
+function read_cookie(key){
+  return document.cookie
+                  .split(';')
+                  .find(row => row.startsWith(key))
+                  .split('=')[1];
+};
+
+
 
 
 //所持金額を表示
+// window.onload = () => {
+//   let path = location.pathname
+//   if(path == "./bet.html"){
+//     document.querySelector(".money").innerHTML=my_beds;
+//   }
+// }
+//bet.htmlの金額を表示
 document.querySelector(".money").innerHTML=my_beds;
 
-//1.ベッド数を入力
-document.querySelector(".bet-btn").addEventListener("click", function () {
-  bed_Score = document.querySelector();
-  my_beds-=bed_Score;
+//画面読み込み時に始動game.html
+window.onload = function(){
   //ディーラー側
   distribute_card(0)
   //カードを2枚ドロー
@@ -228,6 +262,27 @@ document.querySelector(".bet-btn").addEventListener("click", function () {
   distribute_card(0)
   //ヒット、スタンドボタンを動くようにする
   start_flag = 1;
+}
+
+
+
+//1.ベッド数を入力./bed.html
+document.querySelector(".bet-btn").addEventListener("click", function () {
+  bed_Score = document.querySelector(".betform").innerHTML;
+  //正規表現で数値のみ受付
+  //クッキーの書き込み Numberで数値に変換
+  write_cookie(bed_score,Number(bed_Score));
+  // //ディーラー側
+  // distribute_card(0)
+  // //カードを2枚ドロー
+  // for (let i = 0; i < 2; i++) {
+  //   //プレイヤー側
+  //   distribute_card(1)
+  // };
+  // //ディーラー側
+  // distribute_card(0)
+  // //ヒット、スタンドボタンを動くようにする
+  // start_flag = 1;
 });
 
 
