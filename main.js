@@ -59,7 +59,7 @@ function add_distribute_card(type_number, sheets_number, person) {
   if (person == 1) {//ハートとか　　数字
     //htmlのカード画面書き換え
     // document.querySelector(".dealercard" + card_count).src = "/img/card_" + card_type[type_number] + "_" + ("00" + sheets_number).slice(-2);
-    document.querySelector(".dealercard"+card_count+1).src = "./img/card_club_02.png";
+    document.querySelector(".dealercard"+card_count+1).src = "img/card_club_02.png";
     console.log("jkfsdjklsdf");
     //ポイント用
     //ジャック、クイーン、キング、ではないかの確認
@@ -290,28 +290,6 @@ window.onload = function () {
     start_flag = 1;
 
 }
-
-
-
-//1.ベッド数を入力./bed.html
-document.querySelector(".bet-btn").addEventListener("click", function () {
-  bed_score = document.querySelector(".betform").value;
-  //正規表現で数値のみ受付
-  //クッキーの書き込み Numberで数値に変換
-  write_cookie("bed_score", Number(bed_score));
-  console.log(read_cookie);
-  // //ディーラー側
-  // distribute_card(0)
-  // //カードを2枚ドロー
-  // for (let i = 0; i < 2; i++) {
-  //   //プレイヤー側
-  //   distribute_card(1)
-  // };
-  // //ディーラー側
-  // distribute_card(0)
-  // //ヒット、スタンドボタンを動くようにする
-  // start_flag = 1;
-});
 
 
 //ヒットボタン
