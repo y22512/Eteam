@@ -269,14 +269,6 @@ console.log(location.pathname);
 //画面読み込み時に始動game.html
 window.onload = function () {
   let path = location.pathname
-  //bet.htmlの時に動く
-  if (path == "/bet.html") {
-    //所持金の更新
-    my_beds = read_cookie("my_bed");
-    document.querySelector(".money").innerHTML = my_beds;
-  }
-  //game.htmlの時に動く
-  if (path == "/game.html") {
     //cookie情報の読み込み
     game_count = read_cookie("game_count");
     my_beds = read_cookie("my_bed");
@@ -296,7 +288,6 @@ window.onload = function () {
 
     //ヒット、スタンドボタンを動くようにする
     start_flag = 1;
-  }
 
 }
 

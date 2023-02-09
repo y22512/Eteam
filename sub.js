@@ -22,9 +22,25 @@ function read_cookie(key){
     .split('=')[1];
 };
 //スタート時に動く
-//kookieの初期化
-window.onload = function(){
+window.onload = function () {
+    let path = location.pathname
+    //bet.htmlの時に動く
+    if (path == "/index.html") {
+      //所持金の更新
+      //kookieの初期化
     write_cookie("game_count",0);
     write_cookie("bed_score",0);
     write_cookie("my_bed",100);
+    }
+    if(path == "/bet.html"){
+        my_beds = read_cookie("my_bed");
+        document.querySelector(".bet-btn").addEventListener("click", function () {
+            bed_score = document.querySelector(".betform").value;
+            //正規表現で数値のみ受付
+            //クッキーの書き込み Numberで数値に変換
+            write_cookie("bed_score", Number(bed_score));
+            console.log(read_cookie);
+            document.querySelector(".money").innerHTML = my_beds;
+        });
+    }
 }
