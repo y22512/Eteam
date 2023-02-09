@@ -59,7 +59,7 @@ function add_distribute_card(type_number, sheets_number, person) {
   if (person == 1) {//ハートとか　　数字
     //htmlのカード画面書き換え
     // document.querySelector(".dealercard" + card_count).src = "/img/card_" + card_type[type_number] + "_" + ("00" + sheets_number).slice(-2);
-    document.querySelector(".dealercard"+card_count+1).src = "img/card_club_02.png";
+    document.querySelector(".playercard"+Number(card_count+1)).src = "img/card_club_02.png";
     console.log("jkfsdjklsdf");
     //ポイント用
     //ジャック、クイーン、キング、ではないかの確認
@@ -86,7 +86,7 @@ function add_distribute_card(type_number, sheets_number, person) {
       output_dealer_points[0] += save_dealer_points[0];
       output_dealer_points[1] += save_dealer_points[1];
       //htmlのカード画面書き換え
-    document.querySelector(".playercard" + card_count).src = "/img/card_" + card_type[type_number] + "_" + ("00" + sheets_number).slice(-2);
+    document.querySelector(".dealercard" +Number(card_count+1)).src = "img/card_club_02.png";
     }
     //1回目のみ
     else{
