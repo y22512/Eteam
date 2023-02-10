@@ -41,6 +41,19 @@ window.onload = function () {
 }
 document.querySelector(".bet-btn").addEventListener("click", function () {
     bed_score = document.querySelector(".betform").value;
+    //正規表現
+    if(/^[0-9]+$/.test(bed_score)){
+        if((bed_score<=Number(read_cookie("my_bed"))||(bed_score<=100))){
+            
+            document.querySelector(".bet-btn").href="./game.html"
+        }
+        else{
+            alert("掛け金が多すぎです");
+        }
+    }
+    else{
+        alert("数値を半角で入力してください");
+    }
     //正規表現で数値のみ受付
     //クッキーの書き込み Numberで数値に変換
     write_cookie("bed_score", Number(bed_score));
