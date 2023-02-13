@@ -24,8 +24,15 @@ body{
 }
 
 .round{
-    right: 0;
-    bottom: 0;
+    text-align: right;
+    margin-right: 200px;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    color: #000000;
+    font-size: 30px;
+    text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.4);
+    font-weight: bold;
 }
 button{
     font-size:20px;
@@ -34,61 +41,23 @@ button{
 div.hit-btn{
     margin-bottom:50px;
     margin-left:50px;
+
 }
 div.stand-btn{
     margin-left:50px; 
 }
+<<<<<<< HEAD
 div.judge{
-    float:none;
-margin-left:750px;
+    position:absolute;
+    margin-left:750px;
 }
-
 .dealercard1{
     width: 200px;
     height: auto;
-}
-.dealercard2{
-    width: 200px;
-    height: auto;
-}
-.dealercard3{
-    width: 200px;
-    height: auto;
-}
-.dealercard4{
-    width: 200px;
-    height: auto;
-}
-.dealercard5{
-    width: 200px;
-    height: auto;
-}
-.dealercard6{
-    width: 200px;
-    height: auto;
-}
-.playercard1{
-    width: 200px;
-    height: auto;
-}
-.playercard2{
-    width: 200px;
-    height: auto;
-}
-.playercard3{
-    width: 200px;
-    height: auto;
-}
-.playercard4{
-    width: 200px;
-    height: auto;
-}
-.playercard5{
-    width: 200px;
-    height: auto;
-}
-.playercard6{
-    width: 200px;
-    height: auto;
-}
+=======
 
+.round{
+    right: 0px;
+    bottom: 0px;
+>>>>>>> 43411b3737f377709cfeb68495726f04bdc1e80e
+}
