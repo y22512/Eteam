@@ -48,7 +48,7 @@ document.querySelector(".bet-btn").addEventListener("click", function () {
             document.querySelector(".bet-btn").href="./game.html"
         }
         else{
-            alert("掛け金が多すぎです");
+            alert("掛け金が多すぎです　所持金もしくは100以下にしてください");
         }
     }
     else{

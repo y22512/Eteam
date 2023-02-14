@@ -46,7 +46,7 @@ div.hit-btn{
 div.stand-btn{
     margin-left:50px; 
 }
-<<<<<<< HEAD
+
 div.judge{
     position:absolute;
     margin-left:750px;
@@ -54,10 +54,10 @@ div.judge{
 .dealercard1{
     width: 200px;
     height: auto;
-=======
+}
 
 .round{
     right: 0px;
     bottom: 0px;
->>>>>>> 43411b3737f377709cfeb68495726f04bdc1e80e
+
 }
