@@ -220,6 +220,7 @@ function finish_game() {
   //ドロー
   else {
     my_beds += bed_score;
+    document.querySelector(".judgement").src = ".img/animal_lemming.png";
   }
   write_cookie("game_count", Number(game_count) + 1);
   setTimeout(move_site, 3000);
