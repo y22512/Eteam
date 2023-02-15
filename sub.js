@@ -23,20 +23,12 @@ function read_cookie(key) {
 };
 //スタート時に動く
 window.onload = function () {
-    let path = location.pathname
+
     //index.htmlの時に動く
-    if (path == "/index.html") {
-        //所持金の更新
-        //kookieの初期化
-        write_cookie("game_count", 0);
-        write_cookie("bed_score", 0);
-        write_cookie("my_bed", 100);
-    }
     //bet.htmlの時に動く
-    if (path == "/bet.html") {
+        console.log("bet");
         my_beds = read_cookie("my_bed");
         document.querySelector(".money").innerHTML = my_beds;
-    }
 
 }
 document.querySelector(".bet-btn").addEventListener("click", function () {
